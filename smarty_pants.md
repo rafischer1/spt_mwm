@@ -1,6 +1,6 @@
 # Robert A Fischer (Artie) - MWM - Smarty Pants Tester
 ### artiefischer@gmail.com
-### 📞 302 423 2120
+
 
 ## Question 1
 
