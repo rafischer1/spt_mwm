@@ -90,15 +90,17 @@ dateSorting(dateArr)
 
 The most general approach to secure systems is to ensure access rights and passwords (hashed, stored, and checked against previously used passwords) are enforced on a lean and up-to-date machine. In a Unix system this can be even further 'shadowed' by utilizing the `etc/shadow` path to create a second level of hashing for the user group passwords. Additional protection can be applied to the system using a 'proactive security' utility tool such as `netstat -na`. This provides not only a performance analysis but also looks at open ports that may be susceptible to attack. A few other ways to improve security on the machine include: disabling the root user allows for a protected layer between users and their permissions, changing the default port removes an easy target for intruders (think changing the lock on your new house when you move in), and disable login after a certain number of attempts.
 
-For databases typical security measures look for ways to prevent access to the database or a flaw in the programming through which to attack. To prevent SQL injections be sure to differentiate the SQL query from the input data from the site. This includes sanitizing and validating input field data, using a know SQL library to form queries such as Knex for Node or the http/net package in Go. Also, keep SQL error or warning messages from the client, and the number one factor: limit access to your database from excellent password policy to the 'principal of least priviledge'.
+For databases typical security measures look for ways to prevent access to the database or a flaw in the programming through which to attack. To prevent SQL injections be sure to differentiate the SQL query from the input data from the site. This includes sanitizing and validating input field data, using a known SQL library to form queries such as Knex for Node or the http/net package in Go which automatically prevent from SQL injections. Also, keep SQL error or warning messages from the client, and the number one factor: limit access to your database from excellent password policy to the 'principal of least priviledge'.
 
-For web server security many of the above approaches also apply from limited priviledges to secure passsword. Other steps to secure web servers includes protecting information related to registry and event logs from anyone without permission to view the information. There are a large number of measures to lock down access from different points of attacks such as: hiding the name of the last user, restricting anonymous access, removing a default administrator, and regularly auditing the system as well as the policies guarding the system to uncover potential flaws (even on successful logins) and looking into unsuccesful attempts to see possible attacks.
+For web server security many of the above approaches also apply from limited privileges to secure passsword. Other steps to secure web servers includes protecting information related to registry and event logs from anyone without permission to view the information. There are a large number of measures to lock down access from different points of attacks such as: hiding the name of the last user, restricting anonymous access, removing a default administrator, and regularly auditing the system as well as the policies guarding the system to uncover potential flaws (even on successful logins) and looking into unsuccesful attempts to see possible attacks.
+
+There exists many built-in or easily adopted tools and frameworks to protect systems, databases, and servers. Generally I would stick to the guidelines of: excellet password policy, limited login attempts, system auditing, and restricting information to only those who absolutely need access. 
 
 ---
 
 ## Question 3
 
-* The following answer only captures 9 of the 11 rows. Unfortunately, I was not able to capture the paradox entries because of the parent_id reference. To see a full .sql file of attempts please see: 
+* The following answer only captures 9 of the 11 rows. Unfortunately, I was not able to capture the paradox entries because of the parent_id reference. To see a full .sql file of attempts please see: [SQL.sql on github](https://github.com/rafischer1/spt_mwm)
 
 ```sql
 WITH RECURSIVE last_run(parent_id, id_list, name_list) AS (
@@ -197,4 +199,3 @@ TDD always and all the time. I learned a valuable lesson about rushing past TDD 
 ## Question 6
 
 ['Trying stuff until it works' - O'Reilly Joke Covers](https://imgur.com/gallery/vqUQ5)
-
