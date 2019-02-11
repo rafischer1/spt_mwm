@@ -82,7 +82,7 @@ dateSorting(dateArr)
 
 [Repl Solution](https://repl.it/@ArtieFischer/MWMorderDates)
 
-[Golang Planyground Solution for Problem 1](https://play.golang.org/p/SAcrJ76AD-w)
+[Golang Playground Solution for Problem 1](https://play.golang.org/p/SAcrJ76AD-w)
 
 ---
 
