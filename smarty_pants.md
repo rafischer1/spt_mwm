@@ -55,9 +55,9 @@ const sortDates = (arr) => {
   let ordered = []
    ordered = arr.sort((a, b) => {
     if (a.year === b.year) {
-       return a.month < b.month
-    } else if (a.month === b.month) {
-      return a.day < b.day
+      if (a.month === b.month) {
+        return a.day < b.day
+      } return a.month < b.month   
     } else {
       return a.year < b.year
     }
@@ -87,7 +87,6 @@ const monthConversionToString = (num, monthArr) => {
 
 // call the f(x) with input array
 dateSorting(dateArr)
-
 ```
 
 [Repl Solution](https://repl.it/@ArtieFischer/MWMorderDates)
