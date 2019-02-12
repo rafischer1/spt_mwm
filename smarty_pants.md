@@ -31,10 +31,19 @@ const dateSorting = (arr) => {
 // converts date string to object {month, day, year}
 const dateArrToObj = (arr, monthArr) => {
   let dateObjArr = []
+  let day = 0
   for (let i = 0; i < arr.length; i++) {
+    dayArr = arr[i].split(' ')[1].split('')
+    for (let j = 0; j < dayArr.length; j++) {
+      if (dayArr[1] == ',') {
+          day = dayArr[0]
+      } else {
+        day = dayArr[0] + dayArr[1]
+      }
+    }
     dateObjArr.push({
       'month': monthConversionToNumber(arr[i].split(' ')[0], monthArr),
-      'day': +arr[i].split(' ')[1].split('')[0],
+      'day': +day,
       'year': +(arr[i].split(' ')[2])
     })
   }
@@ -57,11 +66,11 @@ const sortDates = (arr) => {
 }
 
 // converts month string to integer value
-const monthConversionToNumber = (string, monthArr) => {
+const monthConversionToNumber = (str, monthArr) => {
   let num = 0
   for (let i = 0; i < monthArr.length; i++) {
-    if (string === monthArr[i])
-    num = i
+    if (str === monthArr[i])
+    num = i 
    }
  return num
 }
@@ -78,6 +87,7 @@ const monthConversionToString = (num, monthArr) => {
 
 // call the f(x) with input array
 dateSorting(dateArr)
+
 ```
 
 [Repl Solution](https://repl.it/@ArtieFischer/MWMorderDates)
