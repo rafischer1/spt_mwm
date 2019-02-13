@@ -75,9 +75,10 @@ WITH RECURSIVE last_run(parent_id, id_list, name_list) AS (
   SELECT category.parent_id, array_cat(ARRAY[category.id], last_run.id_list), array_cat(ARRAY[category.name], last_run.name_list) FROM last_run
   JOIN category ON last_run.id_list[1] = category.parent_id 
   ) 
-SELECT id_list, array_to_string(name_list, ', ') AS name_list FROM last_run, category
+SELECT id_list, array_to_string(name_list, ', ') AS name_list FROM last_run, category 
 WHERE last_run.name_list[1] = category.name
 ORDER BY id_list;
+
 
 ROLLBACK;
 
